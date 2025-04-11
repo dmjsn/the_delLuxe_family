@@ -9,44 +9,45 @@ class Logging:
     """Класс для логирования"""
 
     def __init__(self):
+        """Конструктор логов"""
         self.__logger = logging.getLogger()
         self.__addFile()
         self.__addFormat()
-    """Конструктор логов"""
 
     def __addFile(self):
+        """Добавление информации в файл логов"""
         Path(loggingConstants.LOG_FILE_PATH).mkdir(exist_ok=True)
         fileHandler = logging.FileHandler(loggingConstants.LOG_FILE_PATH + "/log_" + str(date.today()) + ".log")
         formatter = logging.Formatter(loggingConstants.LOG_FORMAT)
         fileHandler.setFormatter(formatter)
         self.__logger.addHandler(fileHandler)
-    """Добавление информации в файл логов"""
+
 
     def __addFormat(self):
+        """Формат текста для вывода в консоль"""
         self.__logger.setLevel(logging.DEBUG)
         streamHandler = logging.StreamHandler()
         streamHandler.setLevel(logging.DEBUG)
         streamHandler.setFormatter(LoggingFormatter.CustomFormatter())
         self.__logger.addHandler(streamHandler)
-    """Формат текста для вывода в консоль"""
 
     def info(self, message):
+        """Информационный текст"""
         self.__logger.setLevel(logging.INFO)
         self.__logger.info(message)
-    """Информационный текст"""
 
     def debug(self, message):
+        """Debug текст"""
         if settings.DEBUG:
             self.__logger.setLevel(logging.DEBUG)
             self.__logger.debug(message)
-    """Debug текст"""
 
     def warning(self, message):
+        """Предупреждение"""
         self.__logger.setLevel(logging.WARNING)
         self.__logger.warning(message)
-    """Предупреждение"""
 
     def error(self, message):
+        """Ошибка"""
         self.__logger.setLevel(logging.ERROR)
         self.__logger.error(message)
-    """Ошибка"""
