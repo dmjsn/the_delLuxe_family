@@ -4,9 +4,8 @@ class Constants:
     COLORS = {
         "SUCCESS": 0x00FF00,
         "ERROR": 0xFF0000,
-        "WARNING": 0xFFFF00
+        "WARNING": 0xFFFF00,
+        "INFO": 0x307DFD,
     }
-    """Палитра цветов"""
 
     MESSAGE_LIMIT = 2000
-    """Ограничение ожидания ответа"""
