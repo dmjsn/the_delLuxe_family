@@ -3,5 +3,5 @@ from .Logging import Logging
 from .LoggingFormatter import CustomFormatter
 
 bot = Bot()
-logging = Logging()
+logger = Logging()
 customFormatter = CustomFormatter()

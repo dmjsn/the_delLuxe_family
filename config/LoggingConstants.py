@@ -1,7 +1,7 @@
 class LoggingConstants:
     """Константы для логов"""
 
-    LOG_FILE_PATH: str = "../logs"
+    LOG_FILE_PATH: str = "logs"
     """Путь к файлам логов"""
 
     LOG_FORMAT = "%(asctime)s | %(levelname)s | %(message)s"

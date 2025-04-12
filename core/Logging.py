@@ -3,7 +3,7 @@ from pathlib import Path
 from datetime import date
 from config import loggingConstants
 from config import settings
-# from core import customFormatter
+from core.LoggingFormatter import CustomFormatter
 
 class Logging:
     """Класс для логирования"""
@@ -25,10 +25,8 @@ class Logging:
 
     def __addFormat(self):
         """Формат текста для вывода в консоль"""
-        self.__logger.setLevel(logging.DEBUG)
         streamHandler = logging.StreamHandler()
-        streamHandler.setLevel(logging.DEBUG)
-        # streamHandler.setFormatter(CustomFormatter())
+        streamHandler.setFormatter(CustomFormatter())
         self.__logger.addHandler(streamHandler)
 
     def info(self, message):
