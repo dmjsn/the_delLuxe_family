@@ -14,7 +14,7 @@ class Settings:
     DEBUG: bool = os.getenv("DEBUG", "False") == "True"
 
     EXTENSIONS: List[str] = [
-
+        'monitoring.VoiceLoggerModule'
     ]
 
     INTENTS: Dict[str, bool] = {
