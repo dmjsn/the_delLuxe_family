@@ -17,7 +17,7 @@ class PrivateMessages(commands.Cog):
         if message.content == "id":
             try:
                 await message.channel.send(f"Твой id: {message.author.id}")
-                logger.info(f"A message has been sent to {message.author}.")
+                logger.info(f"A message has been sent to {message.author}. Id: {message.author.id}")
             except Exception as e:
                 logger.error(f"PrivateMessages: {e}")
         else:

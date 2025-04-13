@@ -5,13 +5,13 @@ from core import logger
 class VoiceLogger(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.monitoredChannels = [1360407986060923023] #отслеживаемый канал
-        self.validMember = [4713970002361057390]
+        self.monitoredChannels = [1360660216391274671] #отслеживаемый канал
+        self.validMember = [471397000236105739, 734396325713412136]
         logger.info('VoiceLogger Cog loaded')
 
     @commands.Cog.listener()
     async def on_voice_state_update(self, member, before, after):
-        logger.info(f"{member} joins the {after.channel.name} channel")
+        logger.info(f"{member} joins the {after.channel.id} channel")
         if after.channel and after.channel.id in self.monitoredChannels:
             if not member.id in self.validMember:
                 try:
